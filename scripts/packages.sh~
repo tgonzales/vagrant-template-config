@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -e # Exit script immediately on first error.
+set -x # Print commands and their arguments as they are executed.
+
+# Update Debian package index.
+sudo apt-get update -y
+sudo apt-get upgrade -y
+
+# Install required Debian packages.
+# sudo apt-get install python python-dev automake python-mysqldb 
+# mysql-server python-setuptools python-pip # python-virtualenv git 
+# gunicorn nginx supervisor libmysqlclient-dev
+
+sudo apt-get install -y git-core
+sudo apt-get install -y python-pip build-essential python-dev
+sudo apt-get install -y python-virtualenv
+sudo apt-get install -y mercurial
+sudo apt-get install -y python-psycopg2
+
+sudo pip install --upgrade pip 
+sudo pip install --upgrade virtualenv 
+
+# Clean up build products.
+sudo rm -rf "$tmp_dir"
+
